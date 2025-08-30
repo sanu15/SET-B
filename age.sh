@@ -9,7 +9,6 @@ if ! [[ "$age" =~ ^[0-9]+$ ]]; then
     exit 1
 fi
 
-# Convert age to integer
 age=$((age))
 
 # Classify age group
@@ -17,6 +16,8 @@ if [ "$age" -lt 13 ]; then
     echo "You are a Child."
 elif [ "$age" -ge 13 ] && [ "$age" -le 19 ]; then
     echo "You are a Teenager."
-else
+elif [ "$age" -ge 20 ] && [ "$age" -le 60 ]; then
     echo "You are an Adult."
+else
+    echo "You are in Oldage."
 fi
